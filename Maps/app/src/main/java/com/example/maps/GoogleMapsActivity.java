@@ -4,7 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log; // Import Log class for logging
+import android.util.Log; 
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
