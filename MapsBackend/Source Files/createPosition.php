@@ -9,17 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function create() {
-    // Read raw JSON input
     $data = json_decode(file_get_contents("php://input"), true);
-
-    // Check if the necessary fields are present
     if (isset($data['latitude']) && isset($data['longitude']) && isset($data['date']) && isset($data['imei'])) {
         $latitude = $data['latitude'];
         $longitude = $data['longitude'];
         $date = $data['date'];
         $imei = $data['imei'];
-
-        // Create PositionService instance and call create method
         $ss = new PositionService();
         $ss->create(new Position(1, $latitude, $longitude, $date, $imei));
 
